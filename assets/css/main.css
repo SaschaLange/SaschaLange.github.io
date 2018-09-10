@@ -1,6 +1,15 @@
 @import url(font-awesome.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i");
 
+
+/*
+	Custom CSS for Cryptedmail
+*/
+
+.cryptedmail:after {
+  content: attr(data-name) "@" attr(data-domain) "." attr(data-tld); 
+}
+
 /*
 	Story by HTML5 UP
 	html5up.net | @ajlkn
@@ -3604,7 +3613,8 @@ input, select, textarea {
 
 			}
 
-		.banner.style1.image-position-left .image img {
+		.banner.style1.
+		ition-left .image img {
 			-moz-object-position: left;
 			-webkit-object-position: left;
 			-ms-object-position: left;

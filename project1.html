@@ -95,11 +95,11 @@
 						<section class="wrapper style1 align-center">
 							<div class="inner">
 								<h2>Gallery</h2>
-								<p>A few visual impressions from our project.</p>
+								<p>A few visual impressions from my project.</p>
 							</div>
 
 							<!-- Picture Elements -->
-							<div class="gallery style2 medium lightbox onscroll-fade-in">
+							<div class="gallery style2 medium lightbox onload-fade-in">
 								<article>
 									<a href="images/csp/00.jpg" class="image">
 										<img src="images/csp/00.jpg" alt="" />
@@ -197,9 +197,6 @@
 									</div>
 								</article>
 							</div>
-
-
-
 					</section>
 
 				
@@ -211,10 +208,21 @@
 						<div class="inner">
 							<ul class="icons">
 								<li><a href="https://www.xing.com/profile/Sascha_Lange65" class="icon style2 fa-xing"><span class="label">LinkedIn</span></a></li>
+								<li>
+									<a 
+									data-name="career.sascha" 
+									data-domain="gmail" 
+									data-tld="com" 
+									href="#" 
+									class="icon style2 fa-envelope" 
+									onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld">
+									
+									<span class="label"></span>
+									</a>
+								</li>
 								<li><a href="https://www.instagram.com/slshdot/" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
-								<!-- <li><a href="#" class="icon style2 fa-envelope"><span class="label">Email</span></a></li> -->
 							</ul>
-							<p>&copy; Sascha Lange - 2018
+							<p>&copy; <a href="index.html">Sascha Lange</a> - 2018
 						</div>
 					</footer>
 
