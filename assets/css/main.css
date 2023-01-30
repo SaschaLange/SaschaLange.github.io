@@ -161,8 +161,8 @@ input, select, textarea {
 		}
 
 	body {
-		background-color: #f1f1f1;
-		color: #000000;
+		background-color: #bb2649;
+		color: #000;
 	}
 
 	body, input, select, textarea {
@@ -337,11 +337,11 @@ input, select, textarea {
 		}
 
 	strong, b {
-		color: #000000;
+		color: #fff;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #000000;
+		color: #fff;
 	}
 
 	blockquote {
