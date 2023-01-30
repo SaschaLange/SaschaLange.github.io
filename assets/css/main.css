@@ -161,7 +161,7 @@ input, select, textarea {
 		}
 
 	body {
-		background-color: #ffffff;
+		background-color: #f1f1f1;
 		color: #000000;
 	}
 
@@ -3613,8 +3613,7 @@ input, select, textarea {
 
 			}
 
-		.banner.style1.
-		ition-left .image img {
+		.banner.style1.image-position-left .image img {
 			-moz-object-position: left;
 			-webkit-object-position: left;
 			-ms-object-position: left;
