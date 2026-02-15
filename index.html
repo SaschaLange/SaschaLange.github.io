@@ -1,83 +1,568 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Sascha Lange</title>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
-    />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript
-      ><link rel="stylesheet" href="assets/css/noscript.css"
-    /></noscript>
-  </head>
-  <body class="is-preload">
-    <!-- Wrapper -->
-    <div id="wrapper">
-      <!-- One -->
-      <section
-        class="banner style1 orient-left content-align-left image-position-left fullscreen onload-image-fade-in onload-content-fade-right"
-      >
-        <div class="content">
-          <header>
-            <h1>Sascha Lange</h1>
-            <p>
-              User Experience Designer building intuitive web-apps using
-              <code>Ionic, React & Node.js.</code>
-            </p>
-            <p>
-              Focused on delivering user-centric products for demanding
-              laboratory environments, such as mobile-first
-              Experiment-Control-Software, Manual Liquid-Handling Assistance and
-              more.
-            </p>
-            <p>
-              Further, I'm pursuing my M.Sc. in Human-Computer Interaction at
-              <a href="https://www.hci.uni-wuerzburg.de/">JMU</a>, on the
-              potential benefits of <b>Augmented Reality in pharmaceutical
-              laboratories. #XR #Lab4.0</b>
-            </p>
-          </header>
-          <ul class="icons">
-            <li>
-              <a
-                data-name="career.sascha"
-                data-domain="gmail"
-                data-tld="com"
-                href="#"
-                class="icon style2 fa-envelope"
-                onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld"
-              >
-                <span class="label"></span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/contact-with-saschalange/"
-                class="icon style2 fa-linkedin"
-                ><span class="label">LinkedIn</span></a
-              >
-            </li>
-          </ul>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sascha Lange | Full Stack Software Engineer</title>
+    <meta name="description" content="Senior Full-Stack Engineer specializing in complex web applications for the pharmaceutical industry. HCI-driven UX design, React/Node.js development, and cloud orchestration.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Sascha Lange | Full Stack Software Engineer">
+    <meta property="og:description" content="Senior Full-Stack Engineer specializing in complex web applications for the pharmaceutical industry.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://saschalange.github.io">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        accent: {
+                            50: '#faf5ff',
+                            100: '#f3e8ff',
+                            200: '#e9d5ff',
+                            300: '#d8b4fe',
+                            400: '#c084fc',
+                            500: 'oklch(54.1% 0.281 293.009)',
+                            600: '#9333ea',
+                            700: '#7e22ce',
+                            800: '#6b21a8',
+                            900: '#581c87',
+                        },
+                        teal: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            200: '#99f6e4',
+                            300: '#5eead4',
+                            400: 'oklch(77.7% 0.152 181.912)',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        },
+                        carbon: {
+                            900: '#0a0a0a',
+                            800: '#121212',
+                            700: '#1a1a1a',
+                            600: '#242424',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom scrollbar for dark mode */
+        .dark ::-webkit-scrollbar { width: 8px; }
+        .dark ::-webkit-scrollbar-track { background: #121212; }
+        .dark ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        .dark ::-webkit-scrollbar-thumb:hover { background: #444; }
+        
+        /* Liquid glass effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+        }
+        .dark .glass {
+            background: rgba(10, 10, 10, 0.6);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-carbon-900 text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-gray-200/50 dark:border-white/10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="#" class="text-xl font-semibold tracking-tight">
+                    Sascha Lange<span class="text-accent-500">.</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-accent-500 dark:hover:text-accent-400 transition-colors">About</a>
+                    <a href="#experience" class="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-accent-500 dark:hover:text-accent-400 transition-colors">Experience</a>
+                    <a href="#projects" class="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-accent-500 dark:hover:text-accent-400 transition-colors">Projects</a>
+                    <a href="#contact" class="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-accent-500 dark:hover:text-accent-400 transition-colors">Contact</a>
+                    
+                    <!-- Dark Mode Toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100/80 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 transition-colors" aria-label="Toggle dark mode">
+                        <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/>
+                        </svg>
+                        <svg class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center space-x-4 md:hidden">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-lg bg-gray-100/80 dark:bg-white/10" aria-label="Toggle dark mode">
+                        <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/>
+                        </svg>
+                        <svg class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+                        </svg>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg hover:bg-gray-100/80 dark:hover:bg-white/10" aria-label="Open menu">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </div>
-      </section>
-
-      <!-- Footer -->
-      <footer class="wrapper style1 align-center">
-        <div class="inner">
-          <p>&copy; <a href="index.html">Sascha Lange</a> - 2023</p>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200/50 dark:border-white/10 bg-white/90 dark:bg-carbon-900/90 backdrop-blur-lg">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#about" class="block text-base font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">About</a>
+                <a href="#experience" class="block text-base font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Experience</a>
+                <a href="#projects" class="block text-base font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Projects</a>
+                <a href="#contact" class="block text-base font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Contact</a>
+            </div>
         </div>
-      </footer>
-    </div>
+    </nav>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-  </body>
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center pt-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+            <div class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
+                <!-- Text Content -->
+                <div class="lg:col-span-3 order-2 lg:order-1">
+                    <!-- Mobile: Avatar centered above text -->
+                    <div class="lg:hidden flex justify-center mb-8">
+                        <div class="relative">
+                            <div class="absolute -inset-1 bg-gradient-to-br from-accent-500 to-teal-400 rounded-2xl blur opacity-60"></div>
+                            <img 
+                                src="/images/profile.jpeg" 
+                                alt="Sascha Lange" 
+                                class="relative w-72 h-72 object-cover object-top rounded-2xl grayscale ring-2 ring-white/20"
+                            />
+                        </div>
+                    </div>
+                    
+                    <p class="text-accent-500 font-medium mb-4">Hi, my name is</p>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
+                        Sascha Lange<span class="text-accent-500">.</span>
+                    </h1>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-600 dark:text-gray-400 mb-6">
+                        Full Stack Software Engineer
+                    </h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8 max-w-2xl">
+                        Senior Full-Stack Engineer specializing in the architecture and delivery of complex web applications within the <span class="text-gray-900 dark:text-white font-medium">pharmaceutical industry</span>. I translate intricate scientific workflows into performant, accessible systems — from HCI-driven UX design to production-grade cloud deployment.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="#projects" class="inline-flex items-center px-5 py-2.5 bg-accent-500 hover:bg-accent-600 text-white font-medium rounded-lg transition-colors text-sm sm:text-base sm:px-6 sm:py-3">
+                            View Projects
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:hello.saschalange@gmail.com" class="inline-flex items-center px-5 py-2.5 border border-accent-500 text-accent-500 hover:bg-accent-500 hover:text-white font-medium rounded-lg transition-colors text-sm sm:text-base sm:px-6 sm:py-3">
+                            Say Hello
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                            </svg>
+                        </a>
+                        <a href="/res/SaschaLange_CV2026.pdf" target="_blank" class="inline-flex items-center px-5 py-2.5 border border-gray-300 dark:border-gray-700 hover:border-accent-500 dark:hover:border-accent-500 text-gray-900 dark:text-white font-medium rounded-lg transition-colors text-sm sm:text-base sm:px-6 sm:py-3">
+                            Download CV
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Desktop Profile Image (hidden on mobile) -->
+                <div class="lg:col-span-2 hidden lg:flex justify-center lg:justify-end order-1 lg:order-2">
+                    <div class="relative">
+                        <div class="absolute -inset-1 bg-gradient-to-br from-accent-500 to-teal-400 rounded-2xl blur-lg opacity-50"></div>
+                        <img 
+                            src="/images/profile.jpeg" 
+                            alt="Sascha Lange" 
+                            class="relative w-64 h-80 sm:w-72 sm:h-96 object-cover object-top rounded-2xl grayscale hover:grayscale-0 transition-all duration-500"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50 dark:bg-carbon-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12">
+                <span class="text-accent-500">01.</span> About Me
+            </h2>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+                    <p>
+                        I'm a Senior Full-Stack Engineer with a background in <span class="text-gray-900 dark:text-white font-medium">Human-Computer Interaction</span>, currently working on complex laboratory software systems at Boehringer Ingelheim. My work bridges the gap between laboratory requirements, engineering excellence, and production-grade reliability.
+                    </p>
+                    <p>
+                        I own the entire application lifecycle: from UX research and interface design through React/Node.js development to PostgreSQL data modeling and OpenShift/Jenkins cloud orchestration. I've delivered systems used daily by research scientists in regulated pharmaceutical environments.
+                    </p>
+                    <p>
+                        Beyond software, I'm passionate about hands-on making — from 3D printing functional prototypes to woodworking furniture pieces. This maker mindset deeply influences how I approach software: with care for craft, usability, and lasting quality.
+                    </p>
+                </div>
+                
+                <!-- Skills Grid -->
+                <div class="space-y-6">
+                    <!-- UX & Product -->
+                    <div>
+                        <h3 class="text-sm font-semibold uppercase tracking-wider text-accent-500 mb-3">UX & Product Strategy</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 text-sm bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-full">Human-Computer Interaction</span>
+                            <span class="px-3 py-1 text-sm bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-full">Figma</span>
+                            <span class="px-3 py-1 text-sm bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-full">Wireframing</span>
+                            <span class="px-3 py-1 text-sm bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-full">User Research</span>
+                            <span class="px-3 py-1 text-sm bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-full">Data-Dense UI Design</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Frontend -->
+                    <div>
+                        <h3 class="text-sm font-semibold uppercase tracking-wider text-accent-500 mb-3">Frontend Engineering</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 text-sm bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-full">React</span>
+                            <span class="px-3 py-1 text-sm bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-full">TypeScript</span>
+                            <span class="px-3 py-1 text-sm bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-full">Ionic</span>
+                            <span class="px-3 py-1 text-sm bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-full">State Management</span>
+                            <span class="px-3 py-1 text-sm bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-full">Responsive Design</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Backend & DevOps -->
+                    <div>
+                        <h3 class="text-sm font-semibold uppercase tracking-wider text-accent-500 mb-3">Backend, Data & DevOps</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 text-sm bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-full">Node.js</span>
+                            <span class="px-3 py-1 text-sm bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-full">Express</span>
+                            <span class="px-3 py-1 text-sm bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-full">PostgreSQL</span>
+                            <span class="px-3 py-1 text-sm bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-full">Prisma ORM</span>
+                            <span class="px-3 py-1 text-sm bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-full">OpenShift</span>
+                            <span class="px-3 py-1 text-sm bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-full">Jenkins CI/CD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12">
+                <span class="text-accent-500">02.</span> Experience
+            </h2>
+            
+            <div class="space-y-12">
+                <!-- Boehringer Role -->
+                <div class="relative pl-8 border-l-2 border-accent-500">
+                    <div class="absolute -left-2 top-0 w-4 h-4 bg-accent-500 rounded-full"></div>
+                    <div class="mb-2">
+                        <h3 class="text-xl font-semibold">IT Engineer</h3>
+                        <p class="text-accent-500 font-medium">Konitel GmbH → Boehringer Ingelheim</p>
+                        <p class="text-sm text-gray-500 dark:text-gray-500">2018 — Present · Hamburg, Germany</p>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                        Long-term onsite placement leading the design and development of laboratory software systems for pre-clinical research and drug discovery.
+                    </p>
+                    
+                    <!-- Project Highlights -->
+                    <div class="space-y-4 mt-6">
+                        <h4 class="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-500">Key Projects</h4>
+                        
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div class="p-4 bg-gray-50 dark:bg-carbon-700 rounded-lg">
+                                <h5 class="font-medium mb-1">Digital Pipetting Workbench</h5>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Multi-platform application for manual liquid handling assistance. Scaled from pilot to GMP-validated production.</p>
+                                <p class="text-xs text-accent-500 mt-2">System Lead · Frontend & UX</p>
+                            </div>
+                            
+                            <div class="p-4 bg-gray-50 dark:bg-carbon-700 rounded-lg">
+                                <h5 class="font-medium mb-1">Autonomous Freezer System</h5>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Web interface for automated sample storage and robotic retrieval in drug discovery workflows.</p>
+                                <p class="text-xs text-accent-500 mt-2">Full Stack Engineering & UX</p>
+                            </div>
+                            
+                            <div class="p-4 bg-gray-50 dark:bg-carbon-700 rounded-lg">
+                                <h5 class="font-medium mb-1">Legacy Assay Modernization</h5>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Migrated LabVIEW-based configuration system to modern web stack, expanding user access.</p>
+                                <p class="text-xs text-accent-500 mt-2">System Lead Delegate · Frontend & UX</p>
+                            </div>
+                            
+                            <div class="p-4 bg-gray-50 dark:bg-carbon-700 rounded-lg">
+                                <h5 class="font-medium mb-1">Mobile Analytics Platform</h5>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Tablet-first app for in-vitro study data. Longest-running production system, used by 20+ technicians daily and 1000+ studies per year.</p>
+                                <p class="text-xs text-accent-500 mt-2">Frontend Engineering & UX</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- reeeliance Role -->
+                <div class="relative pl-8 border-l-2 border-gray-300 dark:border-gray-700">
+                    <div class="absolute -left-2 top-0 w-4 h-4 bg-gray-300 dark:bg-gray-700 rounded-full"></div>
+                    <div class="mb-2">
+                        <h3 class="text-xl font-semibold">Frontend Developer</h3>
+                        <p class="text-gray-600 dark:text-gray-400 font-medium">reeeliance IM GmbH · Working Student</p>
+                        <p class="text-sm text-gray-500 dark:text-gray-500">2016 — 2017</p>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Developed internal tools for analyzing reinsurance contracts and managing complex datasets with AngularJS and Django.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Education -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold mb-8">Education</h3>
+                
+                <div class="space-y-8">
+                    <div class="flex flex-col sm:flex-row sm:items-start gap-4">
+                        <div class="sm:w-32 flex-shrink-0">
+                            <span class="text-sm text-gray-500 dark:text-gray-500">2020 — 2024</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">M.Sc. Human–Computer Interaction</h4>
+                            <p class="text-gray-600 dark:text-gray-400">Julius-Maximilians University Würzburg · Grade: 1.3</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-500 mt-1">
+                                Thesis: <em>Evaluating AR Assistance in Manual Liquid Handling</em> — industry-evaluated with Boehringer Ingelheim; awarded Best Presentation.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row sm:items-start gap-4">
+                        <div class="sm:w-32 flex-shrink-0">
+                            <span class="text-sm text-gray-500 dark:text-gray-500">SS 2022</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Exchange Semester — Industrial Design</h4>
+                            <p class="text-gray-600 dark:text-gray-400">Yeungnam University, Daegu, South Korea</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-500 mt-1">
+                                Hands-on design studies including textile and furniture design.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row sm:items-start gap-4">
+                        <div class="sm:w-32 flex-shrink-0">
+                            <span class="text-sm text-gray-500 dark:text-gray-500">2013 — 2018</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">B.Sc. Human–Computer Interaction</h4>
+                            <p class="text-gray-600 dark:text-gray-400">University of Hamburg</p>
+                            <p class="text-sm text-gray-500 dark:text-gray-500 mt-1">
+                                Thesis: <em>Virtual Fixtures in VR Teleoperation</em> — contributed to academic publication.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50 dark:bg-carbon-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12">
+                <span class="text-accent-500">03.</span> Projects
+            </h2>
+            
+            <!-- Technical Projects -->
+            <div class="mb-16">
+                <div class="flex items-center gap-3 mb-6">
+                    <svg class="w-5 h-5 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                    </svg>
+                    <h3 class="text-xl font-semibold">Technical Projects</h3>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- AR Image Target Generator -->
+                    <a href="projects/ar-target-generator.html" class="group block p-6 bg-white dark:bg-carbon-900 rounded-xl border border-gray-200 dark:border-carbon-600 hover:border-accent-500 dark:hover:border-accent-500 transition-all hover:shadow-lg hover:shadow-accent-500/10">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="p-2 bg-accent-100 dark:bg-accent-900/30 rounded-lg">
+                                <svg class="w-6 h-6 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <span class="text-xs font-medium px-2 py-1 bg-accent-100 dark:bg-accent-900/30 text-accent-600 dark:text-accent-400 rounded-full">Technical</span>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2 group-hover:text-accent-500 transition-colors">AR Image Target Generator</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                            Web utility generating high-performance tracking markers for XR applications. Optimized for dense feature distribution in marker-based AR systems.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded">JavaScript</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded">Canvas API</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded">Vuforia</span>
+                        </div>
+                    </a>
+                    
+                    <!-- Placeholder for future project -->
+                    <div class="p-6 bg-white dark:bg-carbon-900 rounded-xl border border-dashed border-gray-300 dark:border-carbon-600 flex items-center justify-center">
+                        <p class="text-sm text-gray-400 dark:text-gray-500">More projects coming soon</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Creative Projects -->
+            <div>
+                <div class="flex items-center gap-3 mb-6">
+                    <svg class="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z"/>
+                    </svg>
+                    <h3 class="text-xl font-semibold">Creative Projects</h3>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Placeholder cards for creative projects -->
+                    <div class="p-6 bg-white dark:bg-carbon-900 rounded-xl border border-dashed border-gray-300 dark:border-carbon-600 flex items-center justify-center min-h-[200px]">
+                        <div class="text-center">
+                            <div class="w-12 h-12 mx-auto mb-3 bg-teal-100 dark:bg-teal-900/30 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                                </svg>
+                            </div>
+                            <p class="text-sm text-gray-400 dark:text-gray-500">3D Printing Projects</p>
+                            <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">Coming soon</p>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 bg-white dark:bg-carbon-900 rounded-xl border border-dashed border-gray-300 dark:border-carbon-600 flex items-center justify-center min-h-[200px]">
+                        <div class="text-center">
+                            <div class="w-12 h-12 mx-auto mb-3 bg-teal-100 dark:bg-teal-900/30 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                                </svg>
+                            </div>
+                            <p class="text-sm text-gray-400 dark:text-gray-500">Woodworking</p>
+                            <p class="text-xs text-gray-400 dark:text-gray-500 mt-1">Coming soon</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">
+                    <span class="text-accent-500">04.</span> Get In Touch
+                </h2>
+                <p class="text-gray-600 dark:text-gray-400 mb-8">
+                    I'm currently focused on my work at Boehringer Ingelheim, but I'm always open to discussing interesting opportunities, collaborations, or just connecting with fellow engineers and designers.
+                </p>
+                <a href="mailto:hello.saschalange@gmail.com" class="inline-flex items-center px-8 py-4 bg-accent-500 hover:bg-accent-600 text-white font-medium rounded-lg transition-colors">
+                    Say Hello
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-gray-200 dark:border-carbon-700">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-500 dark:text-gray-500">
+                    © 2026 Sascha Lange. Built with Tailwind CSS.
+                </p>
+                <div class="flex items-center space-x-6">
+                    <a href="mailto:hello.saschalange@gmail.com" class="text-gray-500 hover:text-accent-500 transition-colors" aria-label="Email">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/in/saschalange" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-accent-500 transition-colors" aria-label="LinkedIn">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/saschalange" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-accent-500 transition-colors" aria-label="GitHub">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Dark mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        const html = document.documentElement;
+        
+        // Check for saved theme or system preference
+        if (localStorage.getItem('theme') === 'dark' || 
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        }
+        
+        function toggleTheme() {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        }
+        
+        themeToggle.addEventListener('click', toggleTheme);
+        themeToggleMobile.addEventListener('click', toggleTheme);
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Close mobile menu on resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
 </html>

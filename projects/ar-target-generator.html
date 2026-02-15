@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Image Target Generator | Sascha Lange</title>
+    <meta name="description" content="A web utility to generate high-performance tracking markers for XR applications, optimized for marker-based AR systems like Vuforia SDK.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="AR Image Target Generator | Sascha Lange">
+    <meta property="og:description" content="Generate high-performance AR tracking markers optimized for dense feature distribution.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://saschalange.github.io/projects/ar-target-generator">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        accent: {
+                            50: '#faf5ff',
+                            100: '#f3e8ff',
+                            200: '#e9d5ff',
+                            300: '#d8b4fe',
+                            400: '#c084fc',
+                            500: 'oklch(54.1% 0.281 293.009)',
+                            600: '#9333ea',
+                            700: '#7e22ce',
+                            800: '#6b21a8',
+                            900: '#581c87',
+                        },
+                        teal: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            200: '#99f6e4',
+                            300: '#5eead4',
+                            400: 'oklch(77.7% 0.152 181.912)',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        },
+                        carbon: {
+                            900: '#0a0a0a',
+                            800: '#121212',
+                            700: '#1a1a1a',
+                            600: '#242424',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom scrollbar for dark mode */
+        .dark ::-webkit-scrollbar { width: 8px; }
+        .dark ::-webkit-scrollbar-track { background: #121212; }
+        .dark ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        .dark ::-webkit-scrollbar-thumb:hover { background: #444; }
+        
+        /* Liquid glass effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+        }
+        .dark .glass {
+            background: rgba(10, 10, 10, 0.6);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+        }
+        
+        /* Prose styling for article content */
+        .prose h2 { margin-top: 2rem; margin-bottom: 1rem; }
+        .prose h3 { margin-top: 1.5rem; margin-bottom: 0.75rem; }
+        .prose p { margin-bottom: 1rem; }
+        .prose ul, .prose ol { margin-bottom: 1rem; padding-left: 1.5rem; }
+        .prose li { margin-bottom: 0.5rem; }
+        .prose code { 
+            background: rgb(243 244 246); 
+            padding: 0.125rem 0.375rem; 
+            border-radius: 0.25rem; 
+            font-size: 0.875rem;
+        }
+        .dark .prose code { background: rgb(31 41 55); }
+        .prose pre {
+            background: rgb(31 41 55);
+            color: rgb(229 231 235);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin-bottom: 1rem;
+        }
+        .prose pre code {
+            background: transparent;
+            padding: 0;
+        }
+        .prose blockquote {
+            border-left: 4px solid oklch(54.1% 0.281 293.009);
+            padding-left: 1rem;
+            font-style: italic;
+            color: rgb(107 114 128);
+            margin-bottom: 1rem;
+        }
+        .dark .prose blockquote { color: rgb(156 163 175); }
+    </style>
+</head>
+<body class="bg-white dark:bg-carbon-900 text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-gray-200/50 dark:border-white/10">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Back Link -->
+                <a href="../index.html" class="inline-flex items-center text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-accent-500 dark:hover:text-accent-500 transition-colors">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                    Back to Home
+                </a>
+                
+                <!-- Logo -->
+                <a href="../index.html" class="text-xl font-semibold tracking-tight">
+                    Sascha<span class="text-accent-500">.</span>
+                </a>
+                
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100/80 dark:bg-white/10 hover:bg-gray-200 dark:hover:bg-white/20 transition-colors" aria-label="Toggle dark mode">
+                    <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/>
+                    </svg>
+                    <svg class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Image -->
+    <div class="pt-16">
+        <div class="w-full h-64 sm:h-80 md:h-96 bg-gradient-to-br from-accent-100 to-accent-200 dark:from-accent-900/30 dark:to-carbon-800 flex items-center justify-center">
+            <!-- Placeholder - replace with actual screenshot -->
+            <div class="text-center">
+                <div class="w-24 h-24 mx-auto mb-4 bg-white dark:bg-carbon-800 rounded-xl shadow-lg flex items-center justify-center">
+                    <svg class="w-12 h-12 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+                <p class="text-sm text-accent-600 dark:text-accent-400">AR Image Target Generator</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Article Content -->
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Header -->
+        <header class="mb-12">
+            <!-- Category Badge -->
+            <span class="inline-flex items-center px-3 py-1 text-xs font-medium bg-accent-100 dark:bg-accent-900/30 text-accent-600 dark:text-accent-400 rounded-full mb-4">
+                <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                </svg>
+                Technical
+            </span>
+            
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+                AR Image Target Generator
+            </h1>
+            
+            <p class="text-xl text-gray-600 dark:text-gray-400 mb-6">
+                A web utility to generate high-performance tracking markers for XR applications, optimized for dense feature distribution in marker-based AR systems.
+            </p>
+            
+            <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 dark:text-gray-500">
+                <time datetime="2024">2024</time>
+                <span>·</span>
+                <span>Personal Project</span>
+            </div>
+            
+            <!-- Tech Stack -->
+            <div class="flex flex-wrap gap-2 mt-6">
+                <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded">JavaScript</span>
+                <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded">Canvas API</span>
+                <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded">Vuforia SDK</span>
+                <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded">Unity</span>
+                <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded">AR/XR</span>
+            </div>
+        </header>
+        
+        <!-- Main Content -->
+        <div class="prose max-w-none text-gray-600 dark:text-gray-400 leading-relaxed">
+            
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Overview</h2>
+            <p>
+                When developing AR applications using marker-based tracking (like Vuforia SDK in Unity), the quality of your image targets directly impacts tracking stability and accuracy. Poor markers lead to jittery overlays, lost tracking, and frustrated users.
+            </p>
+            <p>
+                This tool generates procedural image targets optimized for high trackability scores. It creates patterns with dense, well-distributed features that AR systems can reliably detect and track in real-world conditions.
+            </p>
+            
+            <blockquote>
+                "The difference between a 3-star and 5-star Vuforia rating can make or break your AR experience."
+            </blockquote>
+            
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">The Problem</h2>
+            <p>
+                During my Master's thesis work on AR-assisted laboratory workflows, I needed reliable image targets for physical equipment markers. The standard approach—using printed logos or random images—often resulted in poor tracking. Key issues included:
+            </p>
+            <ul class="list-disc">
+                <li>Low feature density in typical images (large flat areas)</li>
+                <li>Repetitive patterns causing ambiguous detection</li>
+                <li>Poor contrast or feature distribution</li>
+                <li>Targets that worked in testing but failed in real lab lighting</li>
+            </ul>
+            
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Solution</h2>
+            <p>
+                The generator uses the HTML5 Canvas API to create procedural patterns optimized for AR tracking. The algorithm ensures:
+            </p>
+            <ul class="list-disc">
+                <li><strong>High feature density:</strong> No large uniform areas that trackers can't latch onto</li>
+                <li><strong>Non-repetitive patterns:</strong> Each region is visually distinct for unambiguous detection</li>
+                <li><strong>Good contrast distribution:</strong> Sharp edges and varied luminance values</li>
+                <li><strong>Consistent results:</strong> Generated targets reliably achieve 4-5 star Vuforia ratings</li>
+            </ul>
+            
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">How It Works</h2>
+            <p>
+                The tool runs entirely in the browser with no server dependencies. Users can customize the output resolution and download the generated target as a PNG file ready for printing or import into Vuforia Target Manager.
+            </p>
+            <p>
+                The generation algorithm is deterministic, so you can recreate the same target by using the same seed value—useful for version control and documentation.
+            </p>
+            
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Results</h2>
+            <p>
+                Generated targets consistently score 4-5 stars in Vuforia's target rating system, compared to 2-3 stars for typical images. This translates to more stable tracking, faster initial detection, and better performance at oblique viewing angles.
+            </p>
+            <p>
+                The tool was used throughout my thesis research and continues to be a handy utility for AR prototyping work.
+            </p>
+            
+        </div>
+        
+        <!-- Links -->
+        <div class="mt-12 pt-8 border-t border-gray-200 dark:border-carbon-700">
+            <h3 class="text-lg font-semibold mb-4">Links</h3>
+            <div class="flex flex-wrap gap-4">
+                <a href="https://github.com/SaschaLange/Image-Target-Generator" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 bg-gray-100 dark:bg-carbon-700 hover:bg-gray-200 dark:hover:bg-carbon-600 rounded-lg text-sm font-medium transition-colors">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    View on GitHub
+                </a>
+                <a href="https://saschalange.github.io/Image-Target-Generator" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 bg-accent-500 hover:bg-accent-600 text-white rounded-lg text-sm font-medium transition-colors">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                    </svg>
+                    Live Demo
+                </a>
+            </div>
+        </div>
+        
+        <!-- Navigation back -->
+        <div class="mt-12 pt-8 border-t border-gray-200 dark:border-carbon-700">
+            <div class="flex justify-center">
+                <a href="../index.html#projects" class="group inline-flex items-center text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-accent-500 dark:hover:text-accent-500 transition-colors">
+                    <svg class="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                    Back to All Projects
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-gray-200 dark:border-carbon-700">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-500 dark:text-gray-500">
+                    © 2026 Sascha Lange. Built with Tailwind CSS.
+                </p>
+                <div class="flex items-center space-x-6">
+                    <a href="mailto:hello.saschalange@gmail.com" class="text-gray-500 hover:text-accent-500 transition-colors" aria-label="Email">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/in/saschalange" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-accent-500 transition-colors" aria-label="LinkedIn">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/saschalange" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-accent-500 transition-colors" aria-label="GitHub">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Dark mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme or system preference
+        if (localStorage.getItem('theme') === 'dark' || 
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+    </script>
+</body>
+</html>
