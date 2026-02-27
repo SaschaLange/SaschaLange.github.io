@@ -5,77 +5,77 @@
 
 // Project data - edit these to update modal content
 const projectData = {
-    'pipetting-workbench': {
-        title: 'Digital Pipetting Workbench',
-        role: 'System Lead · Frontend & UX',
-        period: '2019 — Present',
-        summary: 'Multi-platform application for manual liquid handling assistance. Scaled from pilot to GMP-validated workflow.',
-        sections: [
+'pipetting-workbench': {
+    "title": "Digital Pipetting Workbench",
+    "role": "System Lead · Frontend & UX",
+    "period": "2023 — Present",
+    "summary": "Hardware-agnostic PWA for guided liquid handling. Scaled from an experimental pilot to a GMP-validated system featuring deep bluetooth hardware integration.",
+    "sections": [
             {
-                heading: 'Overview',
-                content: 'The Digital Pipetting Workbench is a comprehensive multi-platform application designed to assist laboratory technicians in performing precise manual liquid handling tasks. What started as a pilot project evolved into a GMP-validated workflow used in pharmaceutical drug discovery.'
+                "heading": "Overview",
+                "content": "The Digital Pipetting Workbench is a high-precision guidance system designed to bridge the gap between manual dexterity and digital accuracy in pharmaceutical drug discovery. By focusing on a low barrier of entry, the tool was made available company-wide, allowing laboratories to digitize workflows with minimal overhead while remaining fully compliant with GMP-validated environments."
             },
             {
-                heading: 'Technical Challenges',
-                content: 'The system needed to work across tablets, desktops, and projection surfaces while maintaining sub-milliliter precision guidance. I architected a responsive React application with real-time state synchronization, ensuring consistent UX whether technicians worked on iPad stands or wall-mounted displays.'
+                "heading": "Technical Challenges",
+                "content": "The core challenge involved building a reliable bridge between the browser and laboratory hardware. <br/><br/><b>Hardware Integration:</b> Developed a robust, queue-based serial communication architecture using the Web Bluetooth API to remotely control electronic pipetting hardware. This ensured stable command execution, automated volume settings, and real-time state synchronization between the device and the UI.<br/><br/><b>Spatial UX:</b> Engineered a responsive interface that adapts to specific lab modalities: handheld tablets for single-plate tasks and large touchscreen tabletops for complex multi-plate dilutions and multiplication scenarios.<br/><br/><b>Data Resilience:</b> Implemented offline capabilities through protocol templates that can be configured via Excel or automatically generated from LIMS, facilitating easy knowledge sharing and standardized documentation.<br/>"
             },
             {
-                heading: 'Impact',
-                content: 'Successfully reduced pipetting errors by 40% and decreased training time for new technicians from 2 weeks to 3 days. The system now supports 15+ assay types and processes over 5,000 samples monthly in production environments.'
+                "heading": "Impact",
+                "content": "Successfully transitioned a pilot project into a production-ready internal product. The system significantly reduced manual pipetting errors and cycle times by automating volume and mode settings on the hardware. Its flexible deployment—optimized for Microsoft Edge—ensured a scalable, reliable solution now used across several critical sample preparation workflows."
             },
             {
-                heading: 'Tech Stack',
-                content: 'React, TypeScript, Ionic Framework, Node.js, PostgreSQL, WebSocket real-time communication, OpenShift deployment'
+                "heading": "Tech Stack",
+                "content": "React, TypeScript, Ionic Framework, Web Bluetooth API, Serial Communication, Jenkins, OpenShift"
             }
         ]
     },
     'freezer-system': {
-        title: 'Autonomous Freezer System',
-        role: 'Full Stack Engineering & UX',
-        period: '2020 — 2023',
-        summary: 'Web interface for automated sample storage and robotic retrieval in drug discovery workflows.',
-        sections: [
+        "title": "Automated Biorepository Orchestration System",
+        "role": "Full Stack Engineering & UX",
+        "period": "2023 — Present",
+        "summary": "A high-throughput, kiosk-driven interface for automated robotic cold-storage. Streamlined cross-departmental sample transfers from manual handovers to a 'Fast-Food Kiosk' style check-in process.",
+        "sections": [
             {
-                heading: 'Overview',
-                content: 'Built a full-stack web interface for controlling an automated freezer storage system with robotic sample retrieval. The system manages thousands of biological samples stored at -80°C with precise tracking and chain-of-custody requirements.'
+                "heading": "Overview",
+                "content": "In pharmaceutical drug discovery, the transition of samples between therapeutic areas and analytical labs is a critical bottleneck. I led the design and development of a centralized Kiosk system that interfaces with large-scale robotic freezers. This system transformed a complex manual logging process into a seamless, self-service experience for laboratory personnel, ensuring data integrity and sample traceability across departments."
             },
             {
-                heading: 'Technical Implementation',
-                content: 'Designed and implemented a React-based control interface communicating with PLC hardware through a Node.js middleware layer. Created an intuitive 3D visualization of freezer rack positions and implemented optimistic UI updates for smooth operator experience despite hardware communication latencies.'
+                "heading": "Technical Challenges",
+                "content": "Bridging Human & Robotic Workflows:<br/>The primary challenge was abstracting the complexity of robotic scheduling and hardware inventory placement into a 'zero-training' UI. I designed a kiosk interface that allows users to submit orders digitally and receive real-time visual feedback as the robotic freezer identifies, scans, and stores labware through automated turn-gates.<br/><br/>Backend Orchestration & Validation:<br/>While the user experience is intentionally simple, the backend manages high-complexity logic: verifying physical barcode scans against database records, initializing hardware-specific inventory slots, and synchronizing state with robotic scheduling software.<br/><br/>End-to-End Logistics:<br/>Beyond storage, the system manages 'Check-out' logic for consuming labs. This involves commissioning specific sample sets for robotic retrieval and coordinating the handover to either human technicians or autonomous mobile robots (AMRs) for downstream transport."
             },
             {
-                heading: 'Key Features',
-                content: 'Real-time inventory tracking, automated retrieval queue optimization, temperature monitoring with alerting, full audit trail for regulatory compliance, barcode scanning integration, and collision-free robotic path planning visualization.'
+                "heading": "Impact",
+                "content": "Currently driving a significant shift toward standardized, data-driven sample logistics. By automating inventory validation at the point of entry, the system has increased sample availability speeds and drastically reduced the need for manual troubleshooting. This centralized 'source of truth' has improved departmental accountability and provides a scalable foundation for future integration with autonomous transport systems."
             },
             {
-                heading: 'Tech Stack',
-                content: 'React, Node.js, Express, PostgreSQL, Three.js (3D visualization), MQTT protocol, Prisma ORM'
+                "heading": "Tech Stack",
+                "content": "React, TypeScript, Ionic, Node.js, Express, Prisma, PostgreSQL, Robotic Middleware Integration, UX Research"
             }
         ]
     },
     'assay-modernization': {
-        title: 'Legacy Assay Modernization',
-        role: 'System Lead Delegate · Frontend & UX',
-        period: '2021 — 2024',
-        summary: 'Migrated LabVIEW-based measurement configuration system to modern web stack, improving stability and usability while expanding user access.',
-        sections: [
-            {
-                heading: 'Challenge',
-                content: 'A critical measurement configuration system built in LabVIEW had become a bottleneck — it crashed frequently, required local installation, and only one technician could operate it at a time. This created single-point-of-failure risks in production workflows.'
-            },
-            {
-                heading: 'Solution',
-                content: 'Led the migration to a browser-based React application with centralized data management. Reverse-engineered the LabVIEW logic, implemented comprehensive validation to ensure measurement parity, and designed an intuitive interface that reduced configuration time from 45 minutes to 12 minutes.'
-            },
-            {
-                heading: 'Results',
-                content: 'System uptime improved from 60% to 99.7%. Concurrent user support eliminated the bottleneck. Training time reduced by 70%. The web-based approach enabled remote access for off-site troubleshooting and configuration review.'
-            },
-            {
-                heading: 'Tech Stack',
-                content: 'React, TypeScript, Node.js, PostgreSQL, Material-UI, Jest/React Testing Library'
-            }
-        ]
+    "title": "Assay Configuration Management System",
+    "role": "System Lead Delegate · Full Stack Engineering & UX",
+    "period": "2023 — 2025",
+    "summary": "Full-scale modernization of a legacy LabView orchestration tool into a high-performance React/Node.js platform. Bridged 10+ years of technical debt to enable scalable assay configuration and data integrity.",
+    "sections": [
+        {
+            "heading": "Overview",
+            "content": "For over a decade, a business-critical assay configuration tool relied on a legacy LabView system with significant stability and usability constraints. As System Lead Delegate, I co-led the migration of this ecosystem to a modern web stack. The goal was to replace a fragile, file-based storage model with a centralized database architecture while ensuring 100% compatibility with downstream robotic analysis pipelines."
+        },
+        {
+            "heading": "Technical Challenges",
+            "content": "Legacy Deconstruction & UX Research:<br/>I conducted extensive user research and software auditing to deconstruct a 10-year-old system. By identifying critical vs. obsolete features, I translated legacy logic into a streamlined user flow. This process involved tight feedback loops with Subject Matter Experts (SMEs) to ensure the new system met the complex needs of the laboratory groups.<br/><br/>Modernizing Data Architecture:<br/>I collaborated on transitioning the system from decentralized .cfg files on shared drives to a structured PostgreSQL schema. This migration was the 'North Star' for our sprint planning, allowing us to implement advanced features like versioning, templating, and batch-editing that were previously impossible.<br/><br/>Collaborative Design & Prototyping:<br/>To manage the high density of laboratory data, I developed a complete component library and user flow in Klaxoon. This served as our architectural blueprint, enabling a team of four—including LabView and Software Engineers—to work in unison and validate progress against a unified vision."
+        },
+        {
+            "heading": "Impact",
+            "content": "The transition resulted in a high-performance, data-dense web application that eliminated the 'expert-only' bottleneck of the previous system. By introducing intuitive templating and robust error-handling, we significantly lowered the barrier for onboarding new users. The platform now provides a stable, scalable foundation for all automated analysis methods, drastically improving the reliability of the lab's configuration management."
+        },
+        {
+            "heading": "Tech Stack",
+            "content": "React, TypeScript, Ionic, Node.js, Express, Prisma, PostgreSQL, UX Research, Prototyping, Wireframing, User Testing "
+        }
+    ]
     },
     'analytics-platform': {
         title: 'Mobile Analytics Platform',

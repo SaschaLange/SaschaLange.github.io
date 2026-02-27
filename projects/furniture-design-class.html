@@ -59,15 +59,18 @@
         </div>
     </nav>
 
-    <!-- Hero Image -->
+        <!-- Hero Image -->
     <div class="pt-16">
-        <div class="w-full h-64 sm:h-80 md:h-96 bg-gradient-to-br from-gray-200 to-gray-300 dark:from-carbon-700 dark:to-carbon-800 flex items-center justify-center">
-            <!-- Replace with actual image: <img src="hero-image.jpg" alt="Project hero" class="w-full h-full object-cover"> -->
-            <div class="text-center text-gray-400 dark:text-gray-500">
-                <svg class="w-16 h-16 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                </svg>
-                <p class="text-sm">Hero Image Placeholder</p>
+        <div class="w-full bg-gradient-to-br from-teal-100 to-teal-200 dark:from-teal-900/30 dark:to-carbon-800 flex items-center justify-center py-8 sm:py-12 lg:py-16">
+            <div class="px-4 sm:px-6 lg:px-8 w-full max-w-5xl">
+                <!-- Mobile: Square image -->
+                <div class="lg:hidden mx-auto w-full max-w-sm aspect-square">
+                    <img src="./images/furnitures-design-class/final-chair-full-perspective-1.jpg" alt="AR Target Generator Screenshot" class="w-full h-full object-cover rounded-2xl shadow-lg ring-1 ring-white/20">
+                </div>
+                <!-- Desktop: Landscape image -->
+                <div class="hidden lg:block w-full aspect-video">
+                    <img src="./images/furnitures-design-class/final-chair-full-perspective-1.jpg" alt="AR Target Generator Screenshot" class="w-full h-full object-cover rounded-2xl shadow-lg ring-1 ring-white/20">
+                </div>
             </div>
         </div>
     </div>
@@ -86,30 +89,31 @@
             </span>
             
             <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-                Project Title Goes Here
+                Capstone Furniture Design - From Concept to Finished Product
             </h1>
             
             <p class="text-xl text-gray-600 dark:text-gray-400 mb-6">
-                A brief tagline or summary that captures what this project is about in one or two sentences.
+                Building a chair from concept to finished product in South Korea as part of a capstone furniture design class.
             </p>
             
             <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500 dark:text-gray-500">
                 <time datetime="2026-02-15">February 15, 2026</time>
                 <span>·</span>
-                <span>5 min read</span>
+                <span>10 min read</span>
             </div>
             
             <!-- Tech Stack -->
             <div class="flex flex-wrap gap-2 mt-6">
-                <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded">Technology</span>
-                <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded">Framework</span>
-                <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded">Tool</span>
+                <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded">Woodworking</span>
+                <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded">Design</span>
+                <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 rounded">Conceptualization</span>
             </div>
         </header>
         
         <!-- Main Content -->
         <div class="prose max-w-none text-gray-600 dark:text-gray-400 leading-relaxed">
             
+            <!-- ==================== OVERVIEW ==================== -->
             <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Overview</h2>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -117,91 +121,217 @@
             <p>
                 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
-            
+
+            <!-- Atmosphere scene-setter -->
+            <div class="my-8 -mx-4 sm:mx-0">
+                <img src="./images/furnitures-design-class/atmosphere-photo-1.jpg" alt="Workshop atmosphere" class="w-full aspect-video object-cover sm:rounded-lg">
+                <p class="text-sm text-gray-500 dark:text-gray-500 mt-2 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+            </div>
+
             <blockquote>
-                "A meaningful quote or key insight from the project that captures its essence or impact."
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore."
             </blockquote>
-            
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">The Challenge</h2>
+
+            <!-- ==================== 3D CONCEPT & RENDERINGS ==================== -->
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">3D Concept & Renderings</h2>
             <p>
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
             </p>
-            <ul class="list-disc">
-                <li>First key challenge or requirement that needed to be addressed</li>
-                <li>Second important consideration or constraint</li>
-                <li>Third aspect that shaped the approach</li>
-            </ul>
-            
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Process</h2>
             <p>
                 Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
             </p>
-            
-            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Research & Discovery</h3>
+
+            <!-- Horizontal scroll gallery -->
+            <div class="my-8 -mx-4 sm:mx-0">
+                <div class="flex gap-4 overflow-x-auto pb-4 px-4 sm:px-0 snap-x snap-mandatory scrollbar-thin">
+                    <div class="flex-none w-72 sm:w-80 snap-start">
+                        <img src="./images/furnitures-design-class/3d-rendering-front.jpg" alt="3D Rendering — Front View" class="w-full aspect-square object-cover rounded-lg">
+                        <p class="text-xs text-gray-500 dark:text-gray-500 mt-2 text-center">Front View</p>
+                    </div>
+                    <div class="flex-none w-72 sm:w-80 snap-start">
+                        <img src="./images/furnitures-design-class/3d-rendering-back.jpg" alt="3D Rendering — Back View" class="w-full aspect-square object-cover rounded-lg">
+                        <p class="text-xs text-gray-500 dark:text-gray-500 mt-2 text-center">Back View</p>
+                    </div>
+                    <div class="flex-none w-72 sm:w-80 snap-start">
+                        <img src="./images/furnitures-design-class/3d-rendering-side.jpg" alt="3D Rendering — Side View" class="w-full aspect-square object-cover rounded-lg">
+                        <p class="text-xs text-gray-500 dark:text-gray-500 mt-2 text-center">Side View</p>
+                    </div>
+                    <div class="flex-none w-72 sm:w-80 snap-start">
+                        <img src="./images/furnitures-design-class/3d-rendering-top.jpg" alt="3D Rendering — Top View" class="w-full aspect-square object-cover rounded-lg">
+                        <p class="text-xs text-gray-500 dark:text-gray-500 mt-2 text-center">Top View</p>
+                    </div>
+                    <div class="flex-none w-72 sm:w-80 snap-start">
+                        <img src="./images/furnitures-design-class/3d-rendering-bottom.jpg" alt="3D Rendering — Bottom View" class="w-full aspect-square object-cover rounded-lg">
+                        <p class="text-xs text-gray-500 dark:text-gray-500 mt-2 text-center">Bottom View</p>
+                    </div>
+                    <div class="flex-none w-72 sm:w-80 snap-start">
+                        <img src="./images/furnitures-design-class/3d-rendering-explosion.jpg" alt="3D Rendering — Exploded View" class="w-full aspect-square object-cover rounded-lg">
+                        <p class="text-xs text-gray-500 dark:text-gray-500 mt-2 text-center">Exploded View</p>
+                    </div>
+                    <div class="flex-none w-72 sm:w-80 snap-start">
+                        <img src="./images/furnitures-design-class/3d-rendering-detail-armrest.jpg" alt="3D Rendering — Armrest Detail" class="w-full aspect-square object-cover rounded-lg">
+                        <p class="text-xs text-gray-500 dark:text-gray-500 mt-2 text-center">Armrest Detail</p>
+                    </div>
+                    <div class="flex-none w-72 sm:w-80 snap-start">
+                        <img src="./images/furnitures-design-class/3d-rendering-detail-seat.jpg" alt="3D Rendering — Seat Detail" class="w-full aspect-square object-cover rounded-lg">
+                        <p class="text-xs text-gray-500 dark:text-gray-500 mt-2 text-center">Seat Detail</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== SCALE MODEL ==================== -->
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Scale Model</h2>
             <p>
                 Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
             </p>
-            
-            <!-- Image Grid -->
-            <div class="grid grid-cols-2 gap-4 my-8">
-                <div class="aspect-video bg-gradient-to-br from-gray-200 to-gray-300 dark:from-carbon-700 dark:to-carbon-800 rounded-lg flex items-center justify-center">
-                    <span class="text-xs text-gray-400 dark:text-gray-500">Image 1</span>
+
+            <!-- Scale model images -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8">
+                <div>
+                    <img src="./images/furnitures-design-class/scale-model-full.jpg" alt="Full scale model" class="w-full aspect-square object-cover rounded-lg">
+                    <p class="text-sm text-gray-500 dark:text-gray-500 mt-2 text-center">Lorem ipsum dolor sit amet</p>
                 </div>
-                <div class="aspect-video bg-gradient-to-br from-gray-200 to-gray-300 dark:from-carbon-700 dark:to-carbon-800 rounded-lg flex items-center justify-center">
-                    <span class="text-xs text-gray-400 dark:text-gray-500">Image 2</span>
+                <div>
+                    <img src="./images/furnitures-design-class/scale-model-part.jpg" alt="Partial scale model" class="w-full aspect-square object-cover rounded-lg">
+                    <p class="text-sm text-gray-500 dark:text-gray-500 mt-2 text-center">Lorem ipsum dolor sit amet</p>
                 </div>
             </div>
-            
-            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Implementation</h3>
+
+            <!-- ==================== THE BUILD ==================== -->
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">The Build</h2>
             <p>
-                Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+                Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.
             </p>
-            
-            <pre><code>// Example code snippet
-function example() {
-    const result = doSomething();
-    return result;
-}</code></pre>
-            
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Outcome</h2>
+
+            <!-- Atmosphere — workshop mood -->
+            <div class="my-8 -mx-4 sm:mx-0">
+                <img src="./images/furnitures-design-class/atmosphere-photo-2.jpg" alt="Workshop atmosphere" class="w-full aspect-video object-cover sm:rounded-lg">
+                <p class="text-sm text-gray-500 dark:text-gray-500 mt-2 text-center">Lorem ipsum dolor sit amet</p>
+            </div>
+
             <p>
                 At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
             </p>
-            
-            <!-- Full Width Image -->
-            <div class="my-8 -mx-4 sm:mx-0">
-                <div class="aspect-video bg-gradient-to-br from-gray-200 to-gray-300 dark:from-carbon-700 dark:to-carbon-800 sm:rounded-lg flex items-center justify-center">
-                    <span class="text-sm text-gray-400 dark:text-gray-500">Full Width Image Placeholder</span>
+
+            <!-- Build process grid -->
+            <div class="grid grid-cols-2 gap-4 my-8">
+                <div>
+                    <img src="./images/furnitures-design-class/build-process-1.jpg" alt="Build process step 1" class="w-full aspect-square object-cover rounded-lg">
                 </div>
-                <p class="text-sm text-gray-500 dark:text-gray-500 mt-2 text-center">Caption: Describe what's shown in the image</p>
+                <div>
+                    <img src="./images/furnitures-design-class/build-process-2.jpg" alt="Build process step 2" class="w-full aspect-square object-cover rounded-lg">
+                </div>
+                <div>
+                    <img src="./images/furnitures-design-class/build-process-3.jpg" alt="Build process step 3" class="w-full aspect-square object-cover rounded-lg">
+                </div>
+                <div>
+                    <img src="./images/furnitures-design-class/build-process-4.jpg" alt="Build process step 4" class="w-full aspect-square object-cover rounded-lg">
+                </div>
             </div>
-            
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Key Takeaways</h2>
+
+            <p>
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+            </p>
+
+            <!-- Atmosphere — workshop details -->
+            <div class="my-8 -mx-4 sm:mx-0">
+                <img src="./images/furnitures-design-class/atmosphere-photo-3.jpg" alt="Workshop details" class="w-full aspect-video object-cover sm:rounded-lg">
+                <p class="text-sm text-gray-500 dark:text-gray-500 mt-2 text-center">Lorem ipsum dolor sit amet</p>
+            </div>
+
+            <!-- Lunch break — moment of life -->
+            <div class="my-8 -mx-4 sm:mx-0">
+                <img src="./images/furnitures-design-class/lunch-break-photo.jpg" alt="Lunch break" class="w-full aspect-video object-cover sm:rounded-lg">
+                <p class="text-sm text-gray-500 dark:text-gray-500 mt-2 text-center">Lorem ipsum dolor sit amet</p>
+            </div>
+
+            <!-- ==================== THE FINAL CHAIR ==================== -->
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">The Final Chair</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+            </p>
+
+            <!-- Hero-style full perspective -->
+            <div class="my-8 -mx-4 sm:mx-0">
+                <img src="./images/furnitures-design-class/final-chair-full-perspective-2.jpg" alt="Final chair — full perspective" class="w-full aspect-video object-cover sm:rounded-lg">
+                <p class="text-sm text-gray-500 dark:text-gray-500 mt-2 text-center">Lorem ipsum dolor sit amet</p>
+            </div>
+
+            <p>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+            </p>
+
+            <!-- Remaining perspectives -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8">
+                <div>
+                    <img src="./images/furnitures-design-class/final-chair-full-perspective-1.jpg" alt="Final chair — perspective 1" class="w-full aspect-square object-cover rounded-lg">
+                </div>
+                <div>
+                    <img src="./images/furnitures-design-class/final-chair-full-perspective-3.jpg" alt="Final chair — perspective 3" class="w-full aspect-square object-cover rounded-lg">
+                </div>
+            </div>
+
+            <p>
+                Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+            </p>
+
+            <!-- Detail shots — 3-col grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 my-8">
+                <div>
+                    <img src="./images/furnitures-design-class/final-chair-detail-1.jpg" alt="Chair detail 1" class="w-full aspect-square object-cover rounded-lg">
+                </div>
+                <div>
+                    <img src="./images/furnitures-design-class/final-chair-detail-2.jpg" alt="Chair detail 2" class="w-full aspect-square object-cover rounded-lg">
+                </div>
+                <div>
+                    <img src="./images/furnitures-design-class/final-chair-detail-3.jpg" alt="Chair detail 3" class="w-full aspect-square object-cover rounded-lg">
+                </div>
+                <div>
+                    <img src="./images/furnitures-design-class/final-chair-detail-4.jpg" alt="Chair detail 4" class="w-full aspect-square object-cover rounded-lg">
+                </div>
+                <div>
+                    <img src="./images/furnitures-design-class/final-chair-detail-5.jpg" alt="Chair detail 5" class="w-full aspect-square object-cover rounded-lg">
+                </div>
+                <div>
+                    <img src="./images/furnitures-design-class/final-chair-detail-6.jpg" alt="Chair detail 6" class="w-full aspect-square object-cover rounded-lg">
+                </div>
+            </div>
+
+            <!-- ==================== EXHIBITION ==================== -->
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Exhibition</h2>
+            <p>
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
+            </p>
+
+            <!-- Expo / signing images -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8">
+                <div>
+                    <img src="./images/furnitures-design-class/expo-chair-signing-1.jpg" alt="Exhibition signing 1" class="w-full aspect-square object-cover rounded-lg">
+                    <p class="text-sm text-gray-500 dark:text-gray-500 mt-2 text-center">Lorem ipsum dolor sit amet</p>
+                </div>
+                <div>
+                    <img src="./images/furnitures-design-class/expo-chair-signing-2.jpg" alt="Exhibition signing 2" class="w-full aspect-square object-cover rounded-lg">
+                    <p class="text-sm text-gray-500 dark:text-gray-500 mt-2 text-center">Lorem ipsum dolor sit amet</p>
+                </div>
+            </div>
+
+            <!-- Closing atmosphere -->
+            <div class="my-8 -mx-4 sm:mx-0">
+                <img src="./images/furnitures-design-class/atmosphere-photo-4.jpg" alt="Workshop atmosphere" class="w-full aspect-video object-cover sm:rounded-lg">
+                <p class="text-sm text-gray-500 dark:text-gray-500 mt-2 text-center">Lorem ipsum dolor sit amet</p>
+            </div>
+
+            <!-- ==================== REFLECTIONS ==================== -->
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Reflections</h2>
+            <p>
+                Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+            </p>
             <ol class="list-decimal">
-                <li><strong>First learning:</strong> Description of what was learned or achieved</li>
-                <li><strong>Second insight:</strong> Another important outcome or lesson</li>
-                <li><strong>Third reflection:</strong> Final thought on the project's impact</li>
+                <li><strong>Lorem ipsum:</strong> Dolor sit amet, consectetur adipiscing elit sed do eiusmod</li>
+                <li><strong>Sed ut perspiciatis:</strong> Unde omnis iste natus error sit voluptatem accusantium</li>
+                <li><strong>Nemo enim:</strong> Ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit</li>
             </ol>
             
-        </div>
-        
-        <!-- Links -->
-        <div class="mt-12 pt-8 border-t border-gray-200 dark:border-carbon-700">
-            <h3 class="text-lg font-semibold mb-4">Links</h3>
-            <div class="flex flex-wrap gap-4">
-                <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 bg-gray-100 dark:bg-carbon-700 hover:bg-gray-200 dark:hover:bg-carbon-600 rounded-lg text-sm font-medium transition-colors">
-                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                    View on GitHub
-                </a>
-                <a href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 bg-teal-500 hover:bg-teal-600 text-white rounded-lg text-sm font-medium transition-colors">
-                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                    </svg>
-                    Live Demo
-                </a>
-            </div>
         </div>
 
         <!-- Navigation back -->
